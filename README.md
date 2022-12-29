@@ -16,4 +16,9 @@ CNN classification model for HNE Her2
 </tr>
 
 
+<tr>
+<td>inferHer2Classification.py</td>
+<td>Program to load a trained model for Her2 classification, and label images kept on a folder to classes Her2 positive, Her2 negative, Her2 intermediate and other. Creates folders for these four classes, and keeps images inside those directories as per their predictions.</td>
+</tr>
+
 </table>
