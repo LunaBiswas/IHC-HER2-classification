@@ -5,7 +5,7 @@ import cv2
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, Dataset
-from torchvision import transforms, datasets
+from torchvision import transforms
 from torchvision.utils import save_image
 import torch.nn.functional as F
 
