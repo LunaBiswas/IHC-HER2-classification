@@ -116,7 +116,7 @@ if __name__=='__main__':
 
     #her2_model = torch.jit.load(trt_model_path)
     her2_model = Net()
-    model_path = '/media/adminspin/558649a1-21fd-43b8-b53d-7334f802b47a/wsi_tb_data/Her2/code/Her2Models/HNEHer2_GAP.pth'
+    model_path = '/media/adminspin/558649a1-21fd-43b8-b53d-7334f802b47a/wsi_tb_data/Her2/code/Her2Models/Her2_GAP.pth'
     her2_model.load_state_dict(torch.load(model_path))
     her2_model.eval().to(device)
 
@@ -139,7 +139,7 @@ if __name__=='__main__':
             print("wsi path : ",wsi_path)
             NOW = time.time()
             wsi_name = str(wsi_path).split('/')[-1]
-            if os.path.exists(feature_store_path + '/' + str(wsi_name.split('.tif')[0])+'/'+str(wsi_name.split('.tif')[0])+'_'+str(patch_size)+'cluser_id(row)_tile_class(columns)_distribution.pkl'):
+            if os.path.exists('1'+feature_store_path + '/' + str(wsi_name.split('.tif')[0])+'/'+str(wsi_name.split('.tif')[0])+'_'+str(patch_size)+'cluser_id(row)_tile_class(columns)_distribution.pkl'):
                 print("SKIPPING {}",wsi_name)
                 continue
             else:
@@ -203,7 +203,8 @@ if __name__=='__main__':
             del wsi_tileclass_array
             gc.collect()
 
-            color = [-3342337,-1657882,-256,-16776961]
+            color = ["#1a3399","#fa3e3e","#ffc800",'#1a4d1a']
+            colorQPath = [-3342337,-1657882,-256,-16776961]
             
             #JSON WRITING CODE
             if write_json_flag:
@@ -257,7 +258,7 @@ if __name__=='__main__':
                             
                             label = int(tile_class_label[k*35+ix*5+jy*1])
                             lines += f'"name": "{tile_classes[int(tile_class_label[k*35+ix*5+jy*1])]}",\n'
-                            lines += f'"colorRGB": {color[int(tile_class_label[k*35+ix*5+jy*1])]}\n'
+                            lines += f'"colorRGB": {colorQPath[int(tile_class_label[k*35+ix*5+jy*1])]}\n'
 
                             lines += '},\n'
                             lines += '"isLocked": false\n'
