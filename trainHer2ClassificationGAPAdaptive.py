@@ -13,7 +13,7 @@ from torch.utils.data.sampler import SubsetRandomSampler
 #img_dir = '/nvme1_drive/IHC_Her2_data'
 img_dir = '/nvme1_drive/Her2/IHC_Her2_data/'
 
-model_path = '/nvme1_drive/Her2/code/Her2Models/HNEHer2_net_GAP.pth'
+model_path = '/nvme1_drive/Her2/code/Her2Models/Her2_net_GAP.pth'
           
 batch_size = 16
 num_epochs = 3000
