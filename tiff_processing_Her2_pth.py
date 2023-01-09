@@ -139,7 +139,7 @@ if __name__=='__main__':
             print("wsi path : ",wsi_path)
             NOW = time.time()
             wsi_name = str(wsi_path).split('/')[-1]
-            if os.path.exists('1'+feature_store_path + '/' + str(wsi_name.split('.tif')[0])+'/'+str(wsi_name.split('.tif')[0])+'_'+str(patch_size)+'cluser_id(row)_tile_class(columns)_distribution.pkl'):
+            if os.path.exists(feature_store_path + '/' + str(wsi_name.split('.tif')[0])+'/'+str(wsi_name.split('.tif')[0])+'_'+str(patch_size)+'cluser_id(row)_tile_class(columns)_distribution.pkl'):
                 print("SKIPPING {}",wsi_name)
                 continue
             else:
